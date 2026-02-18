@@ -1,49 +1,97 @@
-
 # GovRAG 🏛️📚
-**Governed Retrieval-Augmented Generation for Expert Knowledge**
+### Governed Retrieval-Augmented Generation for Expert Knowledge
 
-GovRAG is a domain-agnostic AI knowledge platform that turns expert content into:
-- versioned
-- approved
-- traceable
-- AI-queryable knowledge
+GovRAG is a **domain-agnostic AI knowledge platform** that transforms expert content into:
 
-This project is designed as a **portfolio-grade applied AI + data platform**.
+- versioned knowledge
+- approved & governed content
+- AI-queryable trusted sources
+- auditable RAG responses
+
+This project is designed as a **flagship applied AI + data platform**.
 
 ---
 
-# ✨ Vision
+# ✨ Why GovRAG?
 
-Traditional RAG systems retrieve everything.
+Traditional RAG retrieves everything.
 
-**GovRAG retrieves only trusted and approved knowledge.**
+GovRAG retrieves **only approved and trusted knowledge**.
 
 This enables:
-- Industrial AI
-- Operational copilots
-- Auditable AI answers
-- Knowledge governance
+
+- Industrial AI copilots
+- Operational decision support
+- AI with governance
+- Traceable answers with citations
 
 ---
 
-# 🧠 Core Concepts
+# 🧠 Core Principles
 
 - Knowledge is versioned
-- Content must be approved before AI can use it
-- Every AI answer is grounded in trusted sources
-- Feedback becomes training data for ML models
+- Content must be approved
+- AI only uses trusted sources
+- Feedback becomes ML training data
 
 ---
 
-# 🏗️ Current Architecture (MVP)
+# 🏗️ Layered Architecture
 
 ```mermaid
+flowchart TB
+
+subgraph API Layer
+A[FastAPI]
+end
+
+subgraph Governance Layer
+B[Knowledge Items]
+C[Versions]
+D[Approval Workflow]
+end
+
+subgraph Storage Layer
+E[(SQLite)]
+end
+
+subgraph AI Layer
+F[Chunking]
+G[Embeddings]
+H[Vector Index - FAISS]
+I[RAG Retrieval]
+end
+
+subgraph ML Layer (Future)
+J[Trust Score Model]
+end
+
+A --> B
+A --> C
+C --> D
+B --> E
+C --> E
+D --> E
+
+E --> F
+F --> G
+G --> H
+H --> I
+I --> A
+
+E --> J
+```
+
+# 📍 Current Project Status
+```mermaid
 flowchart LR
-
-A[User] --> B[FastAPI]
-
-B --> C[(SQLite DB)]
-
-C --> D[K]()
-
+A[FastAPI running ✅]
+B[SQLite auto-created ✅]
+C[Create items via API ✅]
+D[Versioning ✅]
+E[Approval workflow ✅]
+F[Chunking ⏳]
+G[Embeddings ⏳]
+H[RAG answers ⏳]
+I[ML Trust Model ⏳]
 ```
