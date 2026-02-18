@@ -39,6 +39,7 @@ This enables:
 # 🏗️ Layered Architecture
 
 ```mermaid
+
 flowchart TB
 
 subgraph API Layer
@@ -80,18 +81,4 @@ H --> I
 I --> A
 
 E --> J
-```
-
-# 📍 Current Project Status
-```mermaid
-flowchart LR
-A[FastAPI running ✅]
-B[SQLite auto-created ✅]
-C[Create items via API ✅]
-D[Versioning ✅]
-E[Approval workflow ✅]
-F[Chunking ⏳]
-G[Embeddings ⏳]
-H[RAG answers ⏳]
-I[ML Trust Model ⏳]
 ```
