@@ -1,3 +1,7 @@
+![Status](https://img.shields.io/badge/status-active%20development-blue)
+![AI](https://img.shields.io/badge/AI-Governed%20RAG-purple)
+![Architecture](https://img.shields.io/badge/architecture-layered-success)
+
 # GovRAG 🏛️📚
 ### Governed Retrieval-Augmented Generation for Expert Knowledge
 
@@ -39,31 +43,30 @@ This enables:
 # 🏗️ Layered Architecture
 
 ```mermaid
-
 flowchart TB
 
-subgraph API Layer
+subgraph API["API Layer"]
 A[FastAPI]
 end
 
-subgraph Governance Layer
+subgraph GOV["Governance Layer"]
 B[Knowledge Items]
 C[Versions]
 D[Approval Workflow]
 end
 
-subgraph Storage Layer
+subgraph DB["Storage Layer"]
 E[(SQLite)]
 end
 
-subgraph AI Layer
+subgraph AI["AI Layer"]
 F[Chunking]
 G[Embeddings]
 H[Vector Index - FAISS]
 I[RAG Retrieval]
 end
 
-subgraph ML Layer (Future)
+subgraph ML["ML Layer - Future"]
 J[Trust Score Model]
 end
 
@@ -81,7 +84,6 @@ H --> I
 I --> A
 
 E --> J
-```
 
 ---
 
