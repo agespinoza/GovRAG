@@ -42,9 +42,9 @@ This enables:
 
 # 🏗️ Layered Architecture
 
+
 ```mermaid
 flowchart TB
-
 subgraph API["API Layer"]
 A[FastAPI]
 end
@@ -85,6 +85,8 @@ I --> A
 
 E --> J
 
+
+```
 ---
 
 ## 🚧 Project Status
