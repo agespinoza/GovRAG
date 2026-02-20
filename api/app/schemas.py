@@ -13,4 +13,10 @@ class ApproveVersion(BaseModel):
 
 class AskRequest(BaseModel):
     question: str
-    domain: str = "general"
+    top_k: int = 5
+    domain: str | None = None
+
+class FeedbackRequest(BaseModel):
+    usage_event_id: int | None = None
+    is_helpful: bool
+    comment: str | None = None

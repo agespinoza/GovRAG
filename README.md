@@ -84,3 +84,32 @@ H --> I
 I --> A
 
 E --> J
+```
+---
+
+## ✅ Trust Score (ML Baseline)
+
+GovRAG logs every `/ask` call and user feedback (`/feedback`) to create a supervised dataset.
+
+A baseline **Logistic Regression** model is trained on simple features:
+
+- question length
+- retrieval distance
+- whether retrieval happened
+- feedback comment length
+
+The API returns:
+
+- `trust_score` (0–1)
+- `trust_label` (low/medium/high)
+
+Example:
+
+```json
+{
+  "answer": "...",
+  "trust_score": 0.9996,
+  "trust_label": "high",
+  "citations": [...]
+}
+```

@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Text
 from sqlalchemy.sql import func
 from .db import Base
+from sqlalchemy import Boolean, Float
 
 class KnowledgeItem(Base):
     __tablename__ = "knowledge_items"
@@ -24,3 +25,20 @@ class KnowledgeChunk(Base):
     version_id = Column(Integer, ForeignKey("knowledge_versions.id"), index=True)
     chunk_text = Column(Text)
     chunk_index = Column(Integer)
+
+class UsageEvent(Base):
+    __tablename__ = "usage_events"
+    id = Column(Integer, primary_key=True, index=True)
+    question = Column(Text)
+    domain = Column(String, index=True, default="general")
+    top_chunk_idx = Column(Integer, nullable=True)
+    top_distance = Column(Float, nullable=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+class FeedbackEvent(Base):
+    __tablename__ = "feedback_events"
+    id = Column(Integer, primary_key=True, index=True)
+    usage_event_id = Column(Integer, ForeignKey("usage_events.id"), index=True, nullable=True)
+    is_helpful = Column(Boolean, nullable=False)  # thumbs up/down
+    comment = Column(Text, nullable=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())

@@ -1,0 +1,5 @@
+feedback_id,usage_event_id,is_helpful,comment_len,domain,question_len,top_distance,has_retrieval
+1,1,1,11,devops,22,0.9492813348770142,1
+2,2,1,4,devops,28,0.8007853031158447,1
+6,3,0,32,mining,22,9999.0,0
+4,4,0,14,devops,32,1.83135986328125,1
