@@ -7,10 +7,10 @@
 
 GovRAG is a **domain-agnostic AI knowledge platform** that transforms expert content into:
 
-- versioned knowledge
-- approved & governed content
-- AI-queryable trusted sources
-- auditable RAG responses
+- versioned knowledge  
+- approved & governed content  
+- AI-queryable trusted sources  
+- auditable RAG responses  
 
 This project is designed as a **flagship applied AI + data platform**.
 
@@ -24,27 +24,27 @@ GovRAG retrieves **only approved and trusted knowledge**.
 
 This enables:
 
-- Industrial AI copilots
-- Operational decision support
-- AI with governance
-- Traceable answers with citations
+- Industrial AI copilots  
+- Operational decision support  
+- AI with governance  
+- Traceable answers with citations  
 
 ---
 
 # 🧠 Core Principles
 
-- Knowledge is versioned
-- Content must be approved
-- AI only uses trusted sources
-- Feedback becomes ML training data
+- Knowledge is versioned  
+- Content must be approved  
+- AI only uses trusted sources  
+- Feedback becomes ML training data  
 
 ---
 
 # 🏗️ Layered Architecture
 
-
 ```mermaid
 flowchart TB
+
 subgraph API["API Layer"]
 A[FastAPI]
 end
@@ -84,11 +84,3 @@ H --> I
 I --> A
 
 E --> J
-
-
-```
----
-
-## 🚧 Project Status
-
-This project is currently under active development.
