@@ -1,0 +1,12 @@
+# Python
+.venv/
+
+# Database
+*.db
+
+# AI artifacts
+data/index/
+data/models/
+
+# Cache
+__pycache__/
